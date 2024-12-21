@@ -11,12 +11,12 @@ function Conteiner.btnRight:Paint( w, h )
 end
 
 
----[]---
+---[Transferring a click from an HTML page to the GLUA client]---
 --[HTML]--
 
 if (window.gmod{ window.gmod.emit('button_click', 'button1');}
 
---[LUA]--
+--[LUA\CLIENT]--
 
 html:AddFunction("gmod", "emit", function(buttonId)
    if type(buttonId) == "string" then
@@ -25,3 +25,15 @@ html:AddFunction("gmod", "emit", function(buttonId)
       print("Получен неожиданный тип: " .. type(buttonId))
    end
 end)
+
+---[Transferring a table from a client to an HTML page]---
+--[LUA\CLIENT]--
+local jsonData = util.TableToJSON(bler_static)
+html:RunJavascript("init(" .. jsonData .. ");")
+
+--[HTML]--
+function init(data) {
+    document.getElementById("status_blindozer").innerText = data.stage_1.bler_activ_sost;
+    document.getElementById("name_blindozer").innerText = data.stage_1.bler_name;
+    document.getElementById("number_blindozer").innerText = data.stage_1.bler_number;
+}
