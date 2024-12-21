@@ -1,4 +1,5 @@
 ---[Horizontal Scrolling]---
+--[LUA]--
 local Conteiner = vgui.Create("DHorizontalScroller", frame5)
     Conteiner:SetSize(913, 67)
     Conteiner:SetPos(42, 498)
