@@ -35,7 +35,6 @@ function Conteiner.btnRight:Paint( w, h )
     draw.RoundedBox( 0, 0, 0, w, h, Color( 0, 100, 200,0) )
 end
 
-
 ---[Transferring a click from an HTML page to the GLUA client]---
 --[HTML]--
 
