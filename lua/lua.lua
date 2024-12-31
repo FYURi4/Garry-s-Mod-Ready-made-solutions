@@ -1,3 +1,27 @@
+---[Function for the button]---
+--[LUA]--
+
+local function createButton(Type,parent, posX, posY, sizeX, sizeY, imagePath)
+        local button = vgui.Create(Type, parent)
+        button:SetPos(posX, posY)
+        button:SetSize(sizeX, sizeY)
+        button:SetImage(imagePath)
+        return button
+    end
+
+---[Function for the label]---
+--[LUA]--
+
+local function createLabel(parent, posX, posY, text, width, height, font, color)
+    local label = vgui.Create("DLabel", parent)
+    label:SetPos(posX, posY)
+    label:SetTextColor(color)
+    label:SetFont(font)
+    label:SetSize(width, height)
+    label:SetText(text)
+    return label
+end
+
 ---[Horizontal Scrolling]---
 --[LUA]--
 local Conteiner = vgui.Create("DHorizontalScroller", frame5)
